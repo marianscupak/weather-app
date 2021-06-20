@@ -1,18 +1,9 @@
 import React from "react";
 import { Wind } from "../common/types";
 import arrow from "../../public/arrow.svg";
+import { scale } from "../common/utils";
 
 const WindVisual = ({ wind }: { wind: Wind }) => {
-  function scale(
-    number: number,
-    inMin: number,
-    inMax: number,
-    outMin: number,
-    outMax: number
-  ) {
-    return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-  }
-
   const arrowStyle = {
     transform: `scale(${scale(wind.speed, 0, 56, 0.4, 1)}) rotateZ(${
       wind.deg
