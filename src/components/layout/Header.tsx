@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { CityData } from "../../common/types";
 
 const Header = ({
   cityUpdater,
 }: {
-  cityUpdater: React.Dispatch<React.SetStateAction<string>>;
+  cityUpdater: React.Dispatch<React.SetStateAction<CityData>>;
 }) => {
   const [city, setCity] = useState("");
 
@@ -13,7 +14,7 @@ const Header = ({
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    cityUpdater(city);
+    cityUpdater({ city, shouldUpdate: true });
     setCity("");
   };
 

@@ -52,6 +52,22 @@ export interface WeatherDesc {
   icon: string
 }
 
+export interface Color {
+  r: number
+  g: number
+  b: number
+}
+
+export interface CityData {
+  city: string
+  shouldUpdate: boolean
+};
+
+export const defaultCityState = {
+  city: "",
+  shouldUpdate: false
+}
+
 export const defaultWeather: Weather = {
   id: 0,
   name: "",
