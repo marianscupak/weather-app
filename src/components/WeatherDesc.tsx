@@ -9,6 +9,11 @@ const WeatherDesc = ({ description }: { description: WeatherDesc }) => {
         {description.description.charAt(0).toUpperCase() +
           description.description.slice(1)}
       </h3>
+      <img
+        src={`https://openweathermap.org/img/wn/${description.icon}@4x.png`}
+        alt="Weather icon"
+        height="200px"
+      />
     </div>
   );
 };
